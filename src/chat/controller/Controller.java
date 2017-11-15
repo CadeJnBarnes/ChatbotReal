@@ -7,11 +7,14 @@ public class Controller
 {
 	private Chatbot chatbot;
 	private PopupDisplay display;
+	private ChatFrame appFrame;
 	
 	public Controller()
 	{
 		chatbot = new Chatbot("CadeBarnes");
+		//View initialized after Model
 		display = new PopupDisplay();
+		appFrame = new ChatFrame(this);
 	}
 	
 	public void start()

@@ -16,14 +16,12 @@ public class ChatFrame extends JFrame
 	
 		setupFrame();
 	}
-	 
-	
 	private void setupFrame()
 	{
 		this.setSize(500,500);
 		this.setTitle("Chatbot 2017");
 //		this.setContentPane(appPanel);
-		this.setResizable(false)
+		this.setResizable(false);
 		this.setVisible(true);
 	}
 }
