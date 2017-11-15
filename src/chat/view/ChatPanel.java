@@ -6,7 +6,7 @@ import javax.swing.JButton;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
-
+import java.awt.Color;
 
 public class ChatPanel extends JPanel
 {
@@ -36,6 +36,11 @@ public class ChatPanel extends JPanel
 	}
 	private void setupPanel()
 	{
+		this.setBackground(Color.CYAN);
+		this.setLayout(appLayout);
+		this.add(chatButton);
+		this.add(inputField);
+		this.add(chatArea);
 		
 	}
 	
