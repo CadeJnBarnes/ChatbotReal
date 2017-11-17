@@ -5,7 +5,10 @@ import javax.swing.ImageIcon;
 
 public class PopupDisplay
 {
-
+/**
+ * These lines are what make the chatbot respond to anything the user says or asks.
+ * this is the popup display class so this is the gateway of communication.
+ */
 	private ImageIcon icon;
 	private String windowTitle;
 	
