@@ -9,29 +9,29 @@ public class Chatbot
 	private List<Movie> movieList;
 	private List<String> shoppingList;
 	private List<String> cuteAnimalMemes;
-	private String [] verbs;
-	private String [] topics;
-	private String [] followUps;
-	private String [] questions;
+	private String[] verbs;
+	private String[] topics;
+	private String[] followUps;
+	private String[] questions;
 	private String username;
 	private String content;
 	private String intro;
 	private LocalTime currentTime;
-	
+
 	public Chatbot(String username)
 	{
 		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
-		this.questions = new String [10];
+		this.questions = new String[10];
 		this.username = username;
 		this.content = null;
 		this.intro = null;
 		this.currentTime = null;
-		this.topics = new String [7];
-		this.verbs = new String [4];
-		this.followUps = new String [5];
-		
+		this.topics = new String[7];
+		this.verbs = new String[4];
+		this.followUps = new String[5];
+
 		buildVerbs();
 		buildTopics();
 		buildFollowups();
@@ -46,23 +46,17 @@ public class Chatbot
 		verbs[1] = "dislike";
 		verbs[2] = "ambivalant about";
 		verbs[3] = "am thinking about";
-		
+
 	}
-	
-	private void buildMovieList()
-	{
-		movieList.add(new Movie("Justice League"));
-	}
-	
+
 	private void buildFollowups()
 	{
-		
+
 	}
-	
+
 	private void buildQuitChecker()
 	{
-		
-		
+
 	}
 
 	private void buildTopics()
@@ -74,15 +68,14 @@ public class Chatbot
 		topics[4] = "Practicing";
 		topics[5] = "Job";
 		topics[6] = "Friends";
-		
+
 	}
 
-	
 	private void buildMovieList()
 	{
-			
+		movieList.add(new Movie("Justice League"));
 	}
-	
+
 	private void buildShoppingList()
 	{
 		shoppingList.add("snacks");
@@ -91,12 +84,12 @@ public class Chatbot
 		shoppingList.add("bread");
 		shoppingList.add("Treats");
 	}
-	
+
 	private void buildCuteAnimals()
 	{
-		
+
 	}
-	
+
 	private void buildQuestions()
 	{
 		questions[0] = "What is your name?";
@@ -110,90 +103,90 @@ public class Chatbot
 		questions[8] = "Do you own a phone?";
 		questions[9] = "How old are you?";
 	}
-	
+
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
 		chatbotResponse += "You said:" + "\n" + input + "\n";
-		
+
 		chatbotResponse += buildChatbotResponse();
-		
+
 		return chatbotResponse;
 	}
-	
+
 	private String buildChatbotResponse()
 	{
 		String response = "I ";
 		int random = (int) Math.random() * verbs.length;
-		
+
 		response += verbs[random];
-		
+
 		random = (int) (Math.random() * topics.length);
 		response += " " + topics[random] + ".\n";
-		
+
 		random = (int) (Math.random() * questions.length);
 		response += questions[random];
-		
+
 		random = (int) (Math.random() * 2);
-		if (random %2 == 0)
+		if (random % 2 == 0)
 		{
 			random = (int) (Math.random() * movieList.size());
 			response += "/n" + movieList.get(random).getTitle() + " is a great movie!";
 		}
 		return response;
 	}
-	
+
 	public boolean lengthChecker(String input)
 	{
 		boolean validLength = false;
-		
+
 		if (input != null && input.length() > 2)
 		{
 			validLength = true;
 		}
 		return validLength;
 	}
-	
+
 	public boolean htmlTagChecker(String input)
 	{
 		return false;
 	}
-	
+
 	public boolean userNameChecker(String input)
 	{
 		boolean userName = false;
-		
-		if(input != null && input.length() > 0 && input.startsWith("@"))
+
+		if (input != null && input.length() > 0 && input.startsWith("@"))
 		{
-			if(input.indexOf("@") == input.lastIndexOf("@"))
+			if (input.indexOf("@") == input.lastIndexOf("@"))
 			{
 				userName = true;
 			}
-		
+
 		}
 		return userName;
 	}
-	
+
 	public boolean contentChecker(String contentCheck)
 	{
 		return false;
 	}
-	
+
 	public boolean cuteAnimalMemeChecker(String input)
 	{
 		return false;
 	}
-	
+
 	public boolean shoppingListChecker(String shoppingItem)
 	{
 		return false;
 	}
-	
+
 	public boolean movieTitleChecker(String title)
 	{
 		return false;
 	}
-	
+
 	public boolean movieGenreChecker(String genre)
 	{
 		return false;
@@ -205,7 +198,7 @@ public class Chatbot
 		{
 			return true;
 		}
-		
+
 		return false;
 	}
 
@@ -213,27 +206,27 @@ public class Chatbot
 	{
 		return false;
 	}
-	
+
 	public List<Movie> getMovieList()
 	{
 		return movieList;
 	}
-	
+
 	public List<String> getShoppingList()
 	{
 		return shoppingList;
 	}
-	
+
 	public List<String> getCuteAnimalMemes()
 	{
 		return cuteAnimalMemes;
 	}
 
-	public String [] getQuestions()
+	public String[] getQuestions()
 	{
 		return questions;
 	}
-	
+
 	public String[] getVerbs()
 	{
 		return verbs;
@@ -253,7 +246,7 @@ public class Chatbot
 	{
 		return username;
 	}
-	
+
 	public String getContent()
 	{
 		return content;
@@ -263,17 +256,17 @@ public class Chatbot
 	{
 		return intro;
 	}
-	
+
 	public LocalTime getCurrentTime()
 	{
 		return currentTime;
 	}
-	
+
 	public void setUsername(String username)
 	{
 		this.username = username;
 	}
-	
+
 	public void setContent(String content)
 	{
 		this.content = content;
