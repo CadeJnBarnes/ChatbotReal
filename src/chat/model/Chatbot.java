@@ -20,7 +20,7 @@ public class Chatbot
 	
 	public Chatbot(String username)
 	{
-		this.movieList = null;
+		this.movieList = new ArrayList<Movie>();
 		this.shoppingList = new ArrayList<String>();
 		this.cuteAnimalMemes = new ArrayList<String>();
 		this.questions = new String [10];
@@ -47,6 +47,11 @@ public class Chatbot
 		verbs[2] = "ambivalant about";
 		verbs[3] = "am thinking about";
 		
+	}
+	
+	private void buildMovieList()
+	{
+		movieList.add(new Movie("Justice League"));
 	}
 	
 	private void buildFollowups()
