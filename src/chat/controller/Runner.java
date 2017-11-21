@@ -7,7 +7,7 @@ public class Runner
 	
 	public static void main(String [] args)
 	{
-		Controller app = new Controller();
+		ChatbotController app = new ChatbotController();
 		app.start();
 		
 	}

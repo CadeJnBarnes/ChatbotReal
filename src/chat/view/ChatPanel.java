@@ -1,6 +1,6 @@
 package chat.view;
 
-import chat.controller.Controller;
+import chat.controller.ChatbotController;
 import javax.swing.JPanel;
 import javax.swing.JButton;
 import javax.swing.JTextArea;
@@ -17,13 +17,14 @@ import java.awt.event.ActionListener;
  */
 public class ChatPanel extends JPanel
 {
-	private Controller appController;
+	private ChatbotController appController;
 	private JButton chatButton;
 	private JTextField inputField;
 	private JTextArea chatArea;
 	private SpringLayout appLayout;
+	private JButton checkerButton; 
 
-	public ChatPanel(Controller appController)
+	public ChatPanel(ChatbotController appController)
 	{
 		super();
 		this.appController = appController;
@@ -33,6 +34,7 @@ public class ChatPanel extends JPanel
 		chatArea = new JTextArea(10, 15);
 		inputField = new JTextField(20);
 		appLayout = new SpringLayout();
+		checkerButton = new JButton("chat");
 
 		setupPanel();
 		setupLayout();
@@ -45,6 +47,7 @@ public class ChatPanel extends JPanel
 		this.setBackground(Color.CYAN);
 		this.setLayout(appLayout);
 		this.add(chatButton);
+		this.add(checkerButton);
 		this.add(inputField);
 		this.add(chatArea);
 		chatArea.setEnabled(false);
@@ -79,6 +82,17 @@ public class ChatPanel extends JPanel
 				inputField.setText("");
 			}
 		});
+		
+		checkerButton.addActionListener(new ActionListener()
+				{
+			public void actionPerformed(ActionEvent click)
+			{
+				String userText = inputField.getText();
+				String displayText = appController.useCheckers(userText);
+				chatArea.append(displayText);
+				inputField.setText("");
+			}
+				});
 
 	}
 

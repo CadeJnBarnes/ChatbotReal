@@ -4,13 +4,13 @@ import chat.model.Chatbot;
 import chat.view.PopupDisplay;
 import chat.view.ChatFrame;
 
-public class Controller
+public class ChatbotController
 {
 	private Chatbot chatbot;
 	private PopupDisplay display;
 	private ChatFrame appFrame;
 	
-	public Controller()
+	public ChatbotController()
 	{
 		chatbot = new Chatbot("CadeBarnes");
 		//View initialized after Model
@@ -37,6 +37,53 @@ public class Controller
 		
 		return chatbotSays;
 	}
+	
+	public String useCheckers(String text)
+	{
+		String response = "";
+		
+		if(chatbot.contentChecker(text))
+		{
+			response += "This text matches the special content\n";
+		}
+		if(chatbot.cuteAnimalMemeChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.htmlTagChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.userNameChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.contentChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.shoppingListChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.movieTitleChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.movieGenreChecker(text))
+		{
+			response += "";
+		}
+		if(chatbot.keyboardMashChecker(text))
+		{
+			response += "";
+		}
+		
+		//continue with all checkers except length and quit checker
+		
+		return response;
+	}
+	
 	
 	private void close()
 	{
