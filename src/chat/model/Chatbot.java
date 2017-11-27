@@ -35,9 +35,9 @@ public class Chatbot
 		buildVerbs();
 		buildTopics();
 		buildFollowups();
-		buildQuitChecker();
 		buildShoppingList();
 		buildQuestions();
+		buildMovieList();
 	}
 
 	private void buildVerbs()
@@ -54,10 +54,7 @@ public class Chatbot
 
 	}
 
-	private void buildQuitChecker()
-	{
-
-	}
+	
 
 	private void buildTopics()
 	{
