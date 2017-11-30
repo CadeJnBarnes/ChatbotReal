@@ -80,6 +80,7 @@ public class ChatbotController
 		}
 		
 		//continue with all checkers except length and quit checker
+		// try
 		
 		return response;
 	}
