@@ -94,7 +94,7 @@ public class ChatbotTest
 		testedChatbot.setContent(newContent);
 		assertTrue("Changed content should also work", testedChatbot.contentChecker("adasffadga sfd sdf sdsdf "));
 		
-	}
+	} 
 
 	@Test
 	public void testCuteAnimalMemeChecker()
