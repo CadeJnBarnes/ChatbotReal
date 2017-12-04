@@ -28,7 +28,7 @@ public class ChatPanel extends JPanel
 
 	public ChatPanel(ChatbotController appController)
 	{
-		super();
+		super(); 
 		this.appController = appController;
 
 		// Initialize GUI data members
