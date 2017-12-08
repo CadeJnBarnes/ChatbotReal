@@ -18,6 +18,10 @@ public class Chatbot
 	private String intro;
 	private LocalTime currentTime;
 
+	/**
+	 * This is where I initialize all of my methods that I need to make the program run.
+	 * @param username
+	 */
 	public Chatbot(String username)
 	{
 		this.movieList = new ArrayList<Movie>();

@@ -16,6 +16,9 @@ public class ChatFrame extends JFrame
 	
 		setupFrame();
 	}
+	/**
+	 * This method shows me how to create a frame and what I need to have inside the method.
+	 */
 	private void setupFrame()
 	{
 		this.setSize(500,500);
