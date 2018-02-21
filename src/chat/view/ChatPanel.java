@@ -6,7 +6,6 @@ import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
 /*
  * The JPanel subclass for the chatbot project.
  * @author cade.barnes
@@ -29,7 +28,7 @@ public class ChatPanel extends JPanel
 
 	public ChatPanel(ChatbotController appController)
 	{
-		super(); 
+		super();
 		this.appController = appController;
 
 		// Initialize GUI data members
@@ -41,34 +40,36 @@ public class ChatPanel extends JPanel
 		chatArea = new JTextArea(10, 15);
 		inputField = new JTextField(20);
 		appLayout = new SpringLayout();
-		appLayout.putConstraint(SpringLayout.WEST, chatButton, 357, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, inputField, -154, SpringLayout.SOUTH, this);
 		chatScrollPane = new JScrollPane();
-		appLayout.putConstraint(SpringLayout.NORTH, chatButton, 12, SpringLayout.SOUTH, chatScrollPane);
+
 		infoLabel = new JLabel("Type to chat with the chatbot");
 		checkerButton = new JButton("check");
 		appLayout.putConstraint(SpringLayout.SOUTH, chatButton, -6, SpringLayout.NORTH, checkerButton);
 		appLayout.putConstraint(SpringLayout.EAST, chatButton, 0, SpringLayout.EAST, checkerButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, checkerButton, 0, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.EAST, checkerButton, -25, SpringLayout.EAST, this);
-		
-		
+
 		setupPanel();
 		setupLayout();
 		setupListeners();
 		setupScrollPane();
 
 	}
-	
+
 	private void setupScrollPane()
 	{
 		chatScrollPane.setViewportView(chatArea);
 		chatScrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 		chatScrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+
+		appLayout.putConstraint(SpringLayout.NORTH, inputField, 16, SpringLayout.SOUTH, chatScrollPane);
+		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatScrollPane);
+		appLayout.putConstraint(SpringLayout.NORTH, chatButton, 12, SpringLayout.SOUTH, chatScrollPane);
 	}
 
 	private void setupPanel()
 	{
+
 		this.setBackground(Color.CYAN);
 		this.setLayout(appLayout);
 		this.add(chatButton);
@@ -90,10 +91,19 @@ public class ChatPanel extends JPanel
 	 */
 	private void setupLayout()
 	{
-		appLayout.putConstraint(SpringLayout.WEST, inputField, 0, SpringLayout.WEST, chatScrollPane);
 		appLayout.putConstraint(SpringLayout.NORTH, chatScrollPane, 20, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, chatScrollPane, 25, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.EAST, chatScrollPane, -25, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.WEST, saveButton, 0, SpringLayout.WEST, searchButton);
+		appLayout.putConstraint(SpringLayout.SOUTH, saveButton, -6, SpringLayout.NORTH, searchButton);
+		appLayout.putConstraint(SpringLayout.WEST, tweetButton, 0, SpringLayout.WEST, loadButton);
+		appLayout.putConstraint(SpringLayout.SOUTH, tweetButton, -6, SpringLayout.NORTH, loadButton);
+		appLayout.putConstraint(SpringLayout.NORTH, searchButton, 0, SpringLayout.NORTH, loadButton);
+		appLayout.putConstraint(SpringLayout.WEST, searchButton, 6, SpringLayout.EAST, loadButton);
+		appLayout.putConstraint(SpringLayout.WEST, loadButton, 10, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, loadButton, -10, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, chatButton, 357, SpringLayout.WEST, this);
+
 	}
 
 	private void setupListeners()
@@ -120,6 +130,34 @@ public class ChatPanel extends JPanel
 			}
 		});
 
+		tweetButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+
+			}
+		});
+		searchButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+
+			}
+		});
+		saveButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+
+			}
+		});
+		loadButton.addActionListener(new ActionListener()
+		{
+			public void actionPerformed(ActionEvent click)
+			{
+
+			}
+		});
 	}
 
 }

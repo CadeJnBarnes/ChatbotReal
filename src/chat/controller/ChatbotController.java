@@ -114,5 +114,10 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
+	public void handleErrors(Exception error)
+	{
+		display.displayText(error.getMessage());
+	}
+	
 	
 }
