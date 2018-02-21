@@ -23,6 +23,11 @@ public class ChatbotController
 		display.displayText("Welcome to Chatbot");
 	}
 	
+	/**
+	 * This method helps chatbot to start talking. It tells the program what it needs to do when it first opens.
+	 * @param input
+	 * @return
+	 */
 	public String interactWithChatbot(String input)
 	{
 		String chatbotSays = "";
@@ -38,6 +43,11 @@ public class ChatbotController
 		return chatbotSays;
 	}
 	
+	/**
+	 * This method initializes the checkers and makes sure that the chatbot uses them when talking.
+	 * @param text
+	 * @return
+	 */
 	public String useCheckers(String text)
 	{
 		String response = "";
@@ -85,7 +95,9 @@ public class ChatbotController
 		return response;
 	}
 	
-	
+	/**
+	 * A quit method used by key words.
+	 */
 	private void close()
 	{
 		display.displayText("Goodbye");

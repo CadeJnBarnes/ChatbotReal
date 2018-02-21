@@ -44,6 +44,9 @@ public class Chatbot
 		buildMovieList();
 	}
 
+	/**
+	 * All of these methods help me to run the program, they are each setup differently.
+	 */
 	private void buildVerbs()
 	{
 		verbs[0] = "like";
@@ -62,8 +65,6 @@ public class Chatbot
 		followUps[4]= "Running";
 
 	}
-
-	
 
 	private void buildTopics()
 	{
@@ -110,6 +111,11 @@ public class Chatbot
 		questions[9] = "How old are you?";
 	}
 
+	/**
+	 * These methods help me to return the responses and also helps to run the program.
+	 * @param input
+	 * @return
+	 */
 	public String processConversation(String input)
 	{
 		String chatbotResponse = "";
